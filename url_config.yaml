@@ -1,0 +1,8 @@
+# url map
+
+g : 'https://www.google.com/search?q='
+yt : 'https://www.youtube.com/results?search_query='
+st : 'https://stackoverflow.com/search?q='
+q : 'https://www.quora.com/search?q='
+# gt: 'https://github.com/search?q=ithink20&type=Users'
+cc : 'https://www.codechef.com/users/'
