@@ -48,7 +48,7 @@ class handle(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     dataMap = load_config()
-    parser = argparse.ArgumentParser()
-    parser.add_argument("port", help="give port number", type=int)
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("--port", help="port number to run server on", default=54321, type=int)
     args = parser.parse_args()
     run('localhost', args.port, handle)
