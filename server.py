@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import http.server, urllib, yaml
+import http.server, urllib, yaml, argparse
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from http import HTTPStatus
 from urllib.parse import urlparse
@@ -48,4 +48,7 @@ class handle(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     dataMap = load_config()
-    run('localhost', 12345, handle)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("port", help="give port number", type=int)
+    args = parser.parse_args()
+    run('localhost', args.port, handle)
