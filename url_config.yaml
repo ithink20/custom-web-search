@@ -1,8 +1,14 @@
-# url map
+# url map config format
+# <command_shortcut> : '<redirect_url>'
 
+# Internal commands
+# _ls : prints out this config in an html page
+
+# External commands
 g : 'https://www.google.com/search?q='
+wf : 'https://www.google.com/search?q=weather+forecast+'
 yt : 'https://www.youtube.com/results?search_query='
 st : 'https://stackoverflow.com/search?q='
 q : 'https://www.quora.com/search?q='
-# gt: 'https://github.com/search?q=ithink20&type=Users'
+gt: 'https://github.com/search?q=ithink20&type=Users'
 cc : 'https://www.codechef.com/users/'
