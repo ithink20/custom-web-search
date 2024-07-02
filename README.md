@@ -24,6 +24,7 @@ This Chrome extension allows you to create custom shortcuts to redirect to speci
 
 3. **Using Shortcuts:**
     - Once added, you can use the shortcuts directly in the address bar by typing `u` followed by your shortcut and pressing `Enter`.
+    - **DO NOT USE `SPACE` in shortcuts**
 
 ## Files
 
