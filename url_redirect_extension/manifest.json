@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Web Search",
+  "version": "1.0",
+  "description": "Redirects based on shortcuts.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icons/minion.png"
+  },
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "48": "icons/minion.png"
+    }
+  },
+  "omnibox": {
+    "keyword": "u"
+  }
+}
