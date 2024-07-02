@@ -48,3 +48,8 @@ This Chrome extension allows you to create custom shortcuts to redirect to speci
 ## Contributing
 
 Feel free to fork this repository, propose changes, or report issues. Contributions are welcome!
+
+<img width="529" alt="image" src="https://github.com/ithink20/custom-web-search/assets/27819191/b340d3e8-eb04-4da6-b0d8-82bd40776dd9">
+<img width="1625" alt="image" src="https://github.com/ithink20/custom-web-search/assets/27819191/06050b45-13e2-41a8-9678-7a4785c1eb2d">
+
+
