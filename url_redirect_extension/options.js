@@ -42,7 +42,7 @@ function displayShortcuts() {
 
             const urlSpan = document.createElement('span');
             urlSpan.textContent = String(url);
-            if (url.length > 30) {
+            if (url.length > 50) {
                 urlSpan.textContent = url.substring(0, 50) + '...';
                 urlSpan.setAttribute('title', String(url)); // Set full URL as title attribute
             }
