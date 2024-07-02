@@ -55,7 +55,44 @@
         .shortcut-list li:hover {
             background-color: #f1f1f1;
         }
-        .shortcut-item .delete-icon {
+        .shortcut-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+        }
+
+        .shortcut-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        .shortcut-item span {
+            display: inline-block;
+            max-width: calc(100% - 20px);
+            vertical-align: middle;
+        }
+
+        .shortcut-item span:hover::after {
+            content: attr(title);
+            display: block;
+            position: absolute;
+            background-color: #000;
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            white-space: normal;
+            max-width: 300px; /* Adjust as needed */
+            left: calc(100% + 10px);
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .delete-icon {
             float: right;
             cursor: pointer;
         }

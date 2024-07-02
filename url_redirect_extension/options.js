@@ -38,7 +38,16 @@ function displayShortcuts() {
             listItem.classList.add('shortcut-item');
 
             const textSpan = document.createElement('span');
-            textSpan.textContent = `${shortcut}: ${url}`;
+            textSpan.textContent = `${shortcut}: `;
+
+            const urlSpan = document.createElement('span');
+            urlSpan.textContent = String(url);
+            if (url.length > 30) {
+                urlSpan.textContent = url.substring(0, 50) + '...';
+                urlSpan.setAttribute('title', String(url)); // Set full URL as title attribute
+            }
+
+            textSpan.appendChild(urlSpan);
 
             const deleteIcon = document.createElement('i');
             deleteIcon.className = 'fas fa-trash-alt delete-icon';
@@ -58,6 +67,7 @@ function displayShortcuts() {
         }
     });
 }
+
 
 // Initial display of shortcuts
 displayShortcuts();
