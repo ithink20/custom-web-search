@@ -7,47 +7,47 @@
     <title>URL Redirect Options</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #2C2F33; /* Dark background */
-            color: #D3D3D3; /* Light text */
+            font-family: 'Roboto', sans-serif;
+            background-color: #1F1F1F; /* Dark background */
+            color: #E0E0E0; /* Light text */
             padding: 20px;
             width: 400px; /* Adjust width as needed */
         }
         h1 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #25D366; /* WhatsApp green */
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #FF6F61; /* Vibrant accent color */
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            color: #D3D3D3; /* Light text */
+            margin-bottom: 8px;
+            color: #B0B0B0; /* Slightly lighter text */
         }
         .form-group input[type="text"] {
-            width: 100%; /* Occupy full width of parent container */
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #128C7E; /* WhatsApp dark green border */
-            border-radius: 4px;
+            width: 100%; /* Full width */
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #444; /* Darker border */
+            border-radius: 5px;
+            background-color: #2E2E2E; /* Dark input background */
+            color: #E0E0E0; /* Light text */
             box-sizing: border-box; /* Include padding and border in width calculation */
-            background-color: #3B3E42; /* Dark input background */
-            color: #D3D3D3; /* Light text for input */
         }
         .form-group button {
-            padding: 8px 15px;
-            font-size: 14px;
-            border: 1px solid #000; /* Black border */
-            border-radius: 4px;
-            background-color: #128C7E; /* Darker green background */
+            padding: 10px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF6F61; /* Vibrant button background */
             color: white;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         .form-group button:hover {
-            background-color: #25D366;
-            border-color: #000; /* Maintain black border on hover */
+            background-color: #E65B54; /* Slightly darker on hover */
         }
         .shortcut-list {
             list-style-type: none;
@@ -56,15 +56,15 @@
             overflow-y: auto;
         }
         .shortcut-list li {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #4A4D52; /* Slightly lighter than background */
-            border: 1px solid #128C7E; /* WhatsApp dark green border */
-            border-radius: 10px; /* Rounded corners */
-            color: #D3D3D3; /* Light text */
+            margin-bottom: 12px;
+            padding: 12px;
+            background-color: #2E2E2E; /* Same as input background */
+            border: 1px solid #444; /* Dark border */
+            border-radius: 8px; /* Rounded corners */
+            color: #E0E0E0; /* Light text */
         }
         .shortcut-list li:hover {
-            background-color: #3B3E42; /* Highlight on hover */
+            background-color: #383838; /* Highlight on hover */
         }
         .shortcut-item {
             position: relative;
@@ -78,8 +78,8 @@
             position: absolute;
             background-color: #000;
             color: #fff;
-            padding: 8px;
-            border-radius: 4px;
+            padding: 10px;
+            border-radius: 5px;
             white-space: normal;
             max-width: 300px; /* Adjust as needed */
             left: calc(100% + 10px);
@@ -90,10 +90,10 @@
         .delete-icon {
             float: right;
             cursor: pointer;
-            color: #25D366; /* WhatsApp green */
+            color: #FF6F61; /* Vibrant icon color */
         }
         .delete-icon:hover {
-            color: #128C7E; /* WhatsApp dark green on hover */
+            color: #E65B54; /* Darker on hover */
         }
     </style>
 </head>
