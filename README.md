@@ -50,7 +50,8 @@ This Chrome extension allows you to create custom shortcuts to redirect to speci
 
 Feel free to fork this repository, propose changes, or report issues. Contributions are welcome!
 
-<img width="480" alt="image" src="https://github.com/ithink20/custom-web-search/assets/27819191/91a1b029-66ab-4921-a74b-7f94e5e7f7c1">
+<img width="460" alt="image" src="https://github.com/user-attachments/assets/81274aad-a42d-487d-8a47-8c8b70a97e5a">
+
 
 <img width="1625" alt="image" src="https://github.com/ithink20/custom-web-search/assets/27819191/06050b45-13e2-41a8-9678-7a4785c1eb2d">
 
