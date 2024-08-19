@@ -68,6 +68,39 @@ function displayShortcuts() {
     });
 }
 
+function handleJsonUpload() {
+    const fileInput = document.getElementById('jsonFile');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            try {
+                const json = JSON.parse(event.target.result);
+
+                chrome.storage.sync.get('urls', (data) => {
+                    const urls = data.urls || {};
+                    // Merge new shortcuts with existing ones, overwriting duplicates
+                    const mergedUrls = { ...urls, ...json };
+
+                    chrome.storage.sync.set({ urls: mergedUrls }, () => {
+                        displayShortcuts();
+                        alert('Shortcuts successfully uploaded and updated!');
+                    });
+                });
+            } catch (e) {
+                alert('Error parsing JSON file. Please ensure it is correctly formatted.');
+            }
+        };
+        reader.readAsText(file);
+    } else {
+        alert('Please select a JSON file to upload.');
+    }
+}
+
+// Event listener for uploading the JSON file
+document.getElementById('uploadJson').addEventListener('click', handleJsonUpload);
+
 
 // Initial display of shortcuts
 displayShortcuts();

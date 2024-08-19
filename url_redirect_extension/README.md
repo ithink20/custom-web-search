@@ -8,6 +8,7 @@ This Chrome extension allows you to create custom shortcuts to redirect to speci
 - **Delete Shortcuts:** Delete existing shortcuts.
 - **Storage:** Utilizes Chrome's `storage.sync` API to persist shortcuts across sessions.
 - **Easy Access:** Accessible via the extension icon in the browser toolbar.
+- **Bulk Upload:** Upload Json file for shortcuts
 
 ## Usage
 
@@ -24,6 +25,17 @@ This Chrome extension allows you to create custom shortcuts to redirect to speci
 
 3. **Using Shortcuts:**
     - Once added, you can use the shortcuts directly in the address bar by typing `u` followed by your shortcut and pressing `Enter`.
+
+4. **Upload Shortcurts:**
+    - Supports only json format file only
+  
+    ```
+    {
+        "g": "https://www.google.com/search?q=",
+        "yt": "https://www.youtube.com/results?search_query=",
+        "gh": "https://github.com/search?q="
+    }
+    ```
 
 ## Files
 
