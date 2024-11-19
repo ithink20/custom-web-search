@@ -1,9 +1,9 @@
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.sync.set({ urls: {} });
+    chrome.storage.local.set({ urls: {} });
 });
 
 chrome.omnibox.onInputChanged.addListener((text, suggest) => {
-    chrome.storage.sync.get('urls', (data) => {
+    chrome.storage.local.get('urls', (data) => {
         const urls = data.urls || {};
         const suggestions = [];
         for (const [shortcut, url] of Object.entries(urls)) {
@@ -20,7 +20,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
 chrome.omnibox.onInputEntered.addListener((text, disposition) => {
     const [shortcut, ...rest] = text.split(' ');
     const query = rest.join(' ');
-    chrome.storage.sync.get('urls', (data) => {
+    chrome.storage.local.get('urls', (data) => {
         const urls = data.urls || {};
         const baseUrl = urls[shortcut] || urls['g'];
         const redirectUrl = baseUrl + encodeURIComponent(query);

@@ -5,7 +5,8 @@
   "description": "Redirects based on shortcuts.",
   "permissions": [
     "storage",
-    "activeTab"
+    "activeTab",
+    "unlimitedStorage"
   ],
   "background": {
     "service_worker": "background.js"

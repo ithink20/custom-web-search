@@ -4,13 +4,17 @@ function addShortcut() {
     const url = document.getElementById('url').value.trim();
 
     if (shortcut && url) {
-        chrome.storage.sync.get('urls', (data) => {
+        chrome.storage.local.get('urls', (data) => {
             const urls = data.urls || {};
             urls[shortcut] = url;
-            chrome.storage.sync.set({ urls }, () => {
+            chrome.storage.local.set({ urls }, () => {
                 displayShortcuts();
                 document.getElementById('shortcut').value = '';
                 document.getElementById('url').value = '';
+                var error = chrome.runtime.lastError;  
+                if (error) {  
+                    alert(error);  
+                }
             });
         });
     }
@@ -29,7 +33,7 @@ document.addEventListener('keypress', (event) => {
 
 // Function to display existing shortcuts
 function displayShortcuts() {
-    chrome.storage.sync.get('urls', (data) => {
+    chrome.storage.local.get('urls', (data) => {
         const urls = data.urls || {};
         const shortcutList = document.getElementById('shortcutList');
         shortcutList.innerHTML = '';
@@ -52,11 +56,15 @@ function displayShortcuts() {
             const deleteIcon = document.createElement('i');
             deleteIcon.className = 'fas fa-trash-alt delete-icon';
             deleteIcon.addEventListener('click', () => {
-                chrome.storage.sync.get('urls', (data) => {
+                chrome.storage.local.get('urls', (data) => {
                     const updatedUrls = data.urls || {};
                     delete updatedUrls[shortcut];
-                    chrome.storage.sync.set({ urls: updatedUrls }, () => {
+                    chrome.storage.local.set({ urls: updatedUrls }, () => {
                         displayShortcuts();
+                        var error = chrome.runtime.lastError;  
+                        if (error) {  
+                            alert(error);  
+                        }
                     });
                 });
             });
@@ -78,14 +86,19 @@ function handleJsonUpload() {
             try {
                 const json = JSON.parse(event.target.result);
 
-                chrome.storage.sync.get('urls', (data) => {
+                chrome.storage.local.get('urls', (data) => {
                     const urls = data.urls || {};
                     // Merge new shortcuts with existing ones, overwriting duplicates
                     const mergedUrls = { ...urls, ...json };
 
-                    chrome.storage.sync.set({ urls: mergedUrls }, () => {
+                    chrome.storage.local.set({ urls: mergedUrls }, () => {
                         displayShortcuts();
-                        alert('Shortcuts successfully uploaded and updated!');
+                        var error = chrome.runtime.lastError;  
+                        if (error) {  
+                            alert('***Upload Failed*** Check Extension Error');  
+                        } else {
+                            alert('Shortcuts successfully uploaded and updated!');
+                        }
                     });
                 });
             } catch (e) {
